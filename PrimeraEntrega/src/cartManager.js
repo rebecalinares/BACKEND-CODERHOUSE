@@ -35,7 +35,7 @@ export class CartManager {
             let carrito = dataJS[cid - 1]                                       
             let idx = carrito.products.findIndex(product => product.id == pid)  // se busca el index de del producto que se quiere agregar
 
-            if(idx !== -1){                                                     // si existe, quantity++
+            if(idx !== -1){                                                     // si existee, quantity++
                 let product = carrito.products[idx]
 
                 product.quantity++
