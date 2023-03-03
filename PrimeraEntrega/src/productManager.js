@@ -20,17 +20,17 @@ export class ProductManager {
 
         try {
 
-            if(fs.existsSync(this.path)){     //si el archivo existe se pushea el producto
+            if(fs.existsSync(this.path)){     // si el archivo existe se pushea el producto
                 console.log("existe el archivo");
-                let data = await fs.promises.readFile(this.path, 'utf-8') //data en JSON
-                let dataJS = JSON.parse(data)                             //data en JS
+                let data = await fs.promises.readFile(this.path, 'utf-8') // data en JSON
+                let dataJS = JSON.parse(data)                             // data en JS
     
-                product.id = dataJS[dataJS.length - 1].id + 1             //agrego id
+                product.id = dataJS[dataJS.length - 1].id + 1             // agrego id
                 dataJS.push(product)
     
                 await fs.promises.writeFile(this.path, `${JSON.stringify(dataJS, null, 2)}`, 'utf-8')        //se escribe en el archivo los productos en JSON
     
-            }else{                           //si el archivo NO existe se crea uno
+            }else{                           // si el archivo NO existe se crea uno
                 product.id = 1
                 const arrProducts = [product]
     
