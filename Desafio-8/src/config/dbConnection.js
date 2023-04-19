@@ -1,6 +1,6 @@
 import { connect } from "mongoose"
 
-const URL = 'mongodb://localhost:27017/coderhousedb'
+const URL = 'mongodb+srv://MaitaJv:qpwo_1029@cluster0.asmvudf.mongodb.net/ecommerce?retryWrites=true&w=majority'
 
 const dbConnection = async () => {
     return await connect(URL, err => {
